@@ -109,7 +109,7 @@ $("#search-form").on("submit", async function handleSearch (evt) {
  */
 
 async function getEpisodes(id) {
-  const { data: returnedEpisodes } = await axios.get(`http://api.tvmaze.com/shows/${id}/episodes`);
+  const { data: returnedEpisodes } = await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`);
   $("#episodes-area").show();
   return returnedEpisodes.map( (episode) => {
     return {
@@ -136,7 +136,7 @@ function populateEpisodes(episodes) {
 * {id, name, character }
 */
 async function getActors(id) {
-  const { data: returnedActors } = await axios.get(`http://api.tvmaze.com/shows/${id}/cast`);
+  const { data: returnedActors } = await axios.get(`https://api.tvmaze.com/shows/${id}/cast`);
   $("#actors-area").show();
   return returnedActors.map( (actor) => {
     return {
